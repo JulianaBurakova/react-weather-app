@@ -54,14 +54,14 @@ export default function Weather() {
         </a>{" "}
         and is{" "}
         <a
-          href="https://github.com/Juliana8b/learning-journey"
+          href="https://github.com/JulianaBurakova/react-weather-app"
           target="_blank"
           rel="noreferrer">
           open-sourced on GitHub
         </a>{" "}
         and{" "}
         <a
-          href="https://my-cool-weather-forecast-app.netlify.app"
+          href="https://juliana-react-weather.netlify.app"
           target="_blank"
           rel="noreferrer">
           hosted on Netlify
