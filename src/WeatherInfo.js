@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
+  let [temperature, setTemperature] = useState(props.data.temperature);
+  let [unit, setUnit] = useState("Celsius");
+
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("Fahrenheit");
+    setTemperature(Math.round((props.data.temperature * 9) / 5 + 32));
+  }
+
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("Celsius");
+    setTemperature(props.data.temperature);
+  }
+
   return (
     <div className="WeatherInfo mb-5">
       <div className="row">
@@ -23,10 +38,24 @@ export default function WeatherInfo(props) {
           <div className="temperature-container d-flex justify-content-end">
             <WeatherIcon code={props.data.icon} size={72} />
             <div>
-              <span className="temperature">
-                {Math.round(props.data.temperature)}
+              <span className="temperature">{Math.round(temperature)}</span>
+              <span className="unit">
+                {unit === "Celsius" ? (
+                  <>
+                    °C{" "}
+                    <a href="/" onClick={showFahrenheit} className="linkStyle">
+                      | °F
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a href="/" onClick={showCelsius} className="linkStyle">
+                      °C |
+                    </a>{" "}
+                    °F
+                  </>
+                )}
               </span>
-              <span className="unit">°C</span>
             </div>
           </div>
         </div>
