@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/public/image/bg.avif");
 }
 .App {
   max-width: 700px;
@@ -9,7 +10,7 @@ body {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 30px 50px #41326414;
-  color: #878787;
+  color: #a1a1a1;
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   padding: 40px;
 }
@@ -17,12 +18,12 @@ body {
   margin-top: 20px;
 }
 .Weather form {
-  margin-top: 40px;
+  margin-top: 20px;
   border-bottom: 1px solid #f3f1f8;
   padding-bottom: 30px;
 }
-.Weather input {
-  background: #e8eff2;
+.Weather .form-control {
+  background: #e0e8eb;
   border: none;
   border-radius: 6px;
   color: #6a6fad66;
@@ -34,7 +35,7 @@ body {
   width: 100%;
 }
 
-.Weather button {
+.Weather .btn {
   background: #8dabbd;
   border: none;
   font-size: 16px;
@@ -42,7 +43,19 @@ body {
   border-radius: 7px;
   box-sizing: border-box;
   width: 90%;
-  color: #353636;
+  color: #f5f7f7;
+}
+.Weather .btn:hover {
+  background: #7d9baf;
+  color: #e1e4e6;
+}
+.Weather .btn:active {
+  background: #7d9baf;
+  color: #e1e4e6;
+}
+.Weather .form-control::placeholder {
+  line-height: 20px;
+  color: #36426188;
 }
 .Weather h1 {
   color: #454f5f;
@@ -65,9 +78,15 @@ body {
   align-items: center;
   margin-top: 30px;
 }
-.Weather img {
+.logo {
   height: 74px;
   margin-right: 10px;
+  width: 120px;
+  height: 30px;
+}
+.Weather li strong {
+  color: #af3bcf;
+  font-weight: 700;
 }
 .Weather .temperature {
   color: #454f5f;
@@ -78,19 +97,54 @@ body {
   margin-left: 10px;
 }
 .Weather .unit {
-  color: #212121;
+  color: #333436;
   font-size: 28px;
   font-weight: 400;
   line-height: 1;
   position: relative;
   top: -34px;
 }
+.weather-img {
+  height: 80px;
+  width: 80px;
+}
+.WeatherForecast {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.WeatherForecast .forecast-time {
+  margin-top: 15px;
+  color: #a1a1a1;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+.WeatherForecast .forecast-temperature {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #af3bcf;
+  font-weight: bold;
+}
+
+.WeatherForecast .forecast-temperature-min {
+  margin-left: 10px;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.Weather .WeatherForecast canvas {
+  display: block;
+  margin: 20px auto;
+}
+
 footer {
   border-top: 1px solid #f3f1f8;
   padding-top: 20px;
   text-align: center;
   font-size: 13px;
-  color: rgb(0 0 0 / 50%);
+  color: #00000080;
   text-align: center;
 }
 footer a {
