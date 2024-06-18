@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   let [temperature, setTemperature] = useState(props.data.temperature);
   let [unit, setUnit] = useState("Celsius");
+
+  useEffect(() => {
+    setTemperature(props.data.temperature);
+  }, [props.data.temperature]);
 
   function showFahrenheit(event) {
     event.preventDefault();
